@@ -1,0 +1,9 @@
+<div class="list-container">
+    <div *ngFor="let item of listItems">
+        <app-list-item [ThisItem]="item"></app-list-item>
+    </div>
+    <form (ngSubmit)='addListItem()'>
+        <input type="text" [(ngModel)]='Input' class="text-input" name='name' />
+        <input type="submit" class="add-button" value="+" />
+    </form>
+</div>
