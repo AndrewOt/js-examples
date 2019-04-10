@@ -1,8 +1,17 @@
 <div class="list-container">
+    <!-- This is a "repeater" in Angular. It is fancy markup to tell Angular that we need to iterate over the array
+    of ListItem objects and display them using the <app-list-item> component. -->
     <div *ngFor="let item of listItems">
+        <!-- The [ThisItem] is a binding mechanism. It maps the item of the current iteration (item in this case) to the
+        ThisItem property of the instance of app-list-item. This is one way binding from the component to the template.
+        See https://angular.io/guide/architecture-components#data-binding for a complete explanation of binding. -->
         <app-list-item [ThisItem]="item"></app-list-item>
     </div>
+    <!-- The (ngSubmit) is event binding. When the form submits, it calls addListItem() on the model -->
     <form (ngSubmit)='addListItem()'>
+        <!-- The [(ngModel)] is two way binding on the Input field in the model. That means that when the
+        input is set here, it changes the model, then the value for Input is set in the model, the value is
+        changed here. -->
         <input type="text" [(ngModel)]='Input' class="text-input" name='name' />
         <input type="submit" class="add-button" value="+" />
     </form>

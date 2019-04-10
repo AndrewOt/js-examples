@@ -6,6 +6,8 @@ import { ListItem } from '../ListItem';
     templateUrl: './listItem.component.html',
     styleUrls: ['./listItem.component.scss'],
 })
+// This component is for each individual item that is added to the list. The ListItem
+// property is referenced in the template file (listItem.component.html).
 export class ListItemComponent {
     constructor() {}
 
